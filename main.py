@@ -1,12 +1,19 @@
-import turtle
+from turtle import *
 
-turtle.speed(0)
-arr = list(map(int, input().split()))
-for i in range(10):
-    if arr[i] > 200:
-        turtle.pencolor('#0000ff')
-        turtle.circle(20)
-        turtle.pencolor('#000000')
+
+def cube(n):
+    if n <= 10:
+        for i in range(4):
+            fd(5)
+            lt(90)
     else:
-        turtle.circle(arr[i] * 10)
-turtle.mainloop()
+        cube(n//2)
+        for i in range(4):
+            fd(n)
+            lt(90)
+
+penup()
+setpos(-250,-250)
+pendown()
+cube(1000)
+mainloop()
