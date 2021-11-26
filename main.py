@@ -1,19 +1,22 @@
-from turtle import *
-
-
-def cube(n):
-    if n <= 10:
-        for i in range(4):
-            fd(5)
-            lt(90)
-    else:
-        cube(n//2)
-        for i in range(4):
-            fd(n)
-            lt(90)
-
-penup()
-setpos(-250,-250)
-pendown()
-cube(1000)
-mainloop()
+Math = {}
+while True:
+    sth = input()
+    if sth == '':
+        break
+    surname, name, mark = map(str, sth.split())
+    Math[surname + ' ' + name] = mark
+Inf = {}
+while True:
+    sth = input()
+    if sth == '':
+        break
+    surname, name, mark = map(str, sth.split())
+    Inf[surname + ' ' + name] = mark
+Phizik = {}
+while True:
+    sth = input()
+    if sth == '':
+        break
+    surname, name, mark = map(str, sth.split())
+    Phizik[surname + ' ' + name] = mark
+print(len(set(Math.keys()) - set(Inf.keys())))# + set(Phizik.keys())))
