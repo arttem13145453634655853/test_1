@@ -9,7 +9,7 @@ def sozd():
     return(ff)
 
 
-n = int(input('Введите количество олимпиад:'))
+n = int(input('Введите количество олимпиад: '))
 Olimps = [0] * n
 for i in range(n):
     Olimps[i] = sozd()
@@ -34,7 +34,15 @@ for i in range(len(Olimps)):
         SpisVsOlimp = SpisVsOlimp.intersection_update(set(Olimps[i].keys()))
 print(SpisVsOlimp)
 
+Max = -1
+NameMax = ''
 for i in SpisVsOlimp:
     sumB = 0
-    for i in Olimps:
+    for j in Olimps:
+        sumB += int(j[i])
+    if sumB > Max:
+        Max = sumB
+        NameMax = i
+print('Тот кто набрал больше всех: ', NameMax)
+
 
